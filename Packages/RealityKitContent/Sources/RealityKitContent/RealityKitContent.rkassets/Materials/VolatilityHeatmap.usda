@@ -1,0 +1,41 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def Material "VolatilityHeatmap"
+    {
+        token outputs:mtlx:surface.connect = </Root/VolatilityHeatmap/MaterialXPreviewSurface.outputs:out>
+        token outputs:realitykit:vertex
+        token outputs:surface
+
+        def Shader "DefaultSurfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.5, 0.5, 0.5)
+            float inputs:roughness = 0.4
+            token outputs:surface
+        }
+
+        def Shader "MaterialXPreviewSurface"
+        {
+            uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+            color3f inputs:diffuseColor.connect = </Root/VolatilityHeatmap/GeometryColor.outputs:out>
+            color3f inputs:emissiveColor.connect = </Root/VolatilityHeatmap/GeometryColor.outputs:out>
+            float inputs:metallic = 0.0
+            float inputs:roughness = 0.35
+            token outputs:out
+        }
+
+        def Shader "GeometryColor"
+        {
+            uniform token info:id = "ND_geomcolor_color3"
+            int inputs:index = 0
+            color3f outputs:out
+        }
+    }
+}
