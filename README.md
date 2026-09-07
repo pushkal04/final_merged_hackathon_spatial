@@ -1,4 +1,4 @@
-# VisionOS Spatial Trading Workstation & Analytics Suite (`final_merged_hackathon_spatial`)
+# VisionOS Spatial Trading Workstation & Analytics Suite
 
 An institutional-grade spatial computing trading suite built for Apple Vision Pro (visionOS). This application bridges historical floor-trading mechanics with cutting-edge spatial Level 2/3 analytics, cross-asset macro shockwave simulations, 3D volatility meshes, and AI copilot capabilities across floating 3D environments.
 
@@ -77,59 +77,60 @@ Built-in AI market assistant capable of analyzing order book imbalances, explain
 └── README.md                         # Documentation & setup guide
 
 
-🛠️ How to Run & Build
-Prerequisites
-macOS: Sonoma 14.0 or later
-Xcode: Xcode 15.2 or later (with the visionOS SDK installed via Xcode > Settings > Platforms)
-Method A: Running in the visionOS Simulator
-Open the Project in Xcode:
+ensure **"Copy items if needed"** and your app target are checked).
 
-Open your .xcodeproj or create a new visionOS > App project in Xcode.
-Add Spatial_WorkstationApp.swift, ContentView.swift, and WebViewContainer.swift to your Xcode project target.
-Drag index.html into your Xcode project navigator (ensure "Copy items if needed" and your app target are checked).
-Select the Simulator:
+2. **Select the Simulator**:
+   * In the top Xcode toolbar, select the target scheme: **Apple Vision Pro (Simulator)**.
 
-In the top Xcode toolbar, select the target scheme: Apple Vision Pro (Simulator).
-Build & Launch:
+3. **Build & Launch**:
+   * Press `Cmd + R` (or click the **Play ▶** button).
 
-Press Cmd + R (or click the Play ▶ button).
-Navigating in the Simulator:
+4. **Navigating in the Simulator**:
+   * **Move Windows**: Click and drag the horizontal **white pill bar** floating below the bottom of any window.
+   * **Push/Pull in Depth (Z-axis)**: Hold the **`Option (⌥)` key** while clicking and dragging the bottom window bar forward or backward.
+   * **Look Around / Orbit View**: **Right-click and drag** anywhere in the virtual room, or use the **`W`, `A`, `S`, `D`** keys to walk around.
+   * **Multi-Window Arrangement**: On the **Spatial Hub**, click **Spawn Spatial Window** on all three cards. Grab each window handle and position the **Workstation** in front, the **3D Pit** to your left, and the **Macro Shockwave** to your right for a panoramic 3-screen desk.
 
-Move Windows: Click and drag the horizontal white pill bar floating below the bottom of any window.
-Push/Pull in Depth (Z-axis): Hold the Option (⌥) key while clicking and dragging the bottom window bar forward or backward.
-Look Around / Orbit View: Right-click and drag anywhere in the virtual room, or use the W, A, S, D keys to walk around.
-Multi-Window Arrangement: On the Spatial Hub, click Spawn Spatial Window on all three cards. Grab each window handle and position the Workstation in front, the 3D Pit to your left, and the Macro Shockwave to your right for a panoramic 3-screen desk.
-Method B: Running on a Physical Apple Vision Pro Device
-Enable Developer Mode on Apple Vision Pro:
+---
 
-On your Apple Vision Pro headset, go to Settings > Privacy & Security > Developer Mode.
-Toggle Developer Mode on and restart the device when prompted.
-Connect Vision Pro to Xcode:
+### Method B: Running on a Physical Apple Vision Pro Device
 
-Ensure your Mac and Apple Vision Pro are connected to the same Wi-Fi network.
-On Vision Pro, navigate to Settings > General > Remote Devices and select your Mac to pair.
-In Xcode, open Window > Devices and Simulators, select your Apple Vision Pro, and enter the pairing code displayed inside the headset.
-Deploy to Device:
+1. **Enable Developer Mode on Apple Vision Pro**:
+   * On your Apple Vision Pro headset, go to **Settings > Privacy & Security > Developer Mode**.
+   * Toggle **Developer Mode** on and restart the device when prompted.
 
-Set the run destination in the Xcode top toolbar to your paired Apple Vision Pro.
-In your project settings under Signing & Capabilities, select your active Apple Developer Team.
-Press Cmd + R to compile and install the application directly to the headset.
-Native Spatial Gestures on Device:
+2. **Connect Vision Pro to Xcode**:
+   * Ensure your Mac and Apple Vision Pro are connected to the **same Wi-Fi network**.
+   * On Vision Pro, navigate to **Settings > General > Remote Devices** and select your Mac to pair.
+   * In Xcode, open **Window > Devices and Simulators**, select your Apple Vision Pro, and enter the pairing code displayed inside the headset.
 
-Window Translation: Look directly at the window bar beneath any panel, pinch your index finger and thumb, and move your hand anywhere in your physical space (X, Y, and Z depth).
-Corner Resizing: Look at any bottom or top corner bracket, pinch, and pull outwards to expand the workstation to life-size proportions.
-Automatic Curving: As you move windows into your peripheral field of view, visionOS automatically rotates them inward to maintain optimal line-of-sight ergonomics.
+3. **Deploy to Device**:
+   * Set the run destination in the Xcode top toolbar to your paired **Apple Vision Pro**.
+   * In your project settings under **Signing & Capabilities**, select your active **Apple Developer Team**.
+   * Press `Cmd + R` to compile and install the application directly to the headset.
 
-📊 Contract Specifications & Supported Assets
-Symbol	Underlying Asset	Tick Size	Notional Multiplier	Base Initial Margin
-/ES	E-mini S&P 500 Futures	0.25	$50 / pt	$12,320.00
-/NQ	E-mini Nasdaq-100 Futures	0.25	$20 / pt	$18,480.00
-/BTC	Bitcoin Futures	5.00	5 BTC	$35,200.00
-/CL	Light Sweet Crude Oil	0.01	1,000 bbl	$7,150.00
-/GC	Gold Futures	0.10	100 troy oz	$9,900.00
-/ZN	10-Year US Treasury Note	0.0156	$1,000 / pt	$2,420.00
+4. **Native Spatial Gestures on Device**:
+   * **Window Translation**: Look directly at the window bar beneath any panel, **pinch your index finger and thumb**, and move your hand anywhere in your physical space (X, Y, and Z depth).
+   * **Corner Resizing**: Look at any bottom or top corner bracket, pinch, and pull outwards to expand the workstation to life-size proportions.
+   * **Automatic Curving**: As you move windows into your peripheral field of view, visionOS automatically rotates them inward to maintain optimal line-of-sight ergonomics.
 
-🔒 Security & Privacy
-The data in the current application is simulated and generated directly on the client side (hardcoded baseline schemas + dynamic mathematical simulation engines) inside index.html. It does not require an external API subscription or live internet connection to run smoothly in the visionOS Simulator.
-All Level 2 order book feeds, candlestick random-walk generators, 3D animations, and macro stress scenarios run entirely locally on-device.
-No external API keys or private network credentials are required for standalone execution.
+---
+
+## 📊 Contract Specifications & Supported Assets
+
+| Symbol | Underlying Asset | Tick Size | Notional Multiplier | Base Initial Margin |
+| :--- | :--- | :--- | :--- | :--- |
+| **/ES** | E-mini S&P 500 Futures | 0.25 | $50 / pt | $12,320.00 |
+| **/NQ** | E-mini Nasdaq-100 Futures | 0.25 | $20 / pt | $18,480.00 |
+| **/BTC** | Bitcoin Futures | 5.00 | 5 BTC | $35,200.00 |
+| **/CL** | Light Sweet Crude Oil | 0.01 | 1,000 bbl | $7,150.00 |
+| **/GC** | Gold Futures | 0.10 | 100 troy oz | $9,900.00 |
+| **/ZN** | 10-Year US Treasury Note | 0.0156 | $1,000 / pt | $2,420.00 |
+
+---
+
+## 🔒 Security & Privacy
+* The data in the current application is simulated and generated directly on the client side (hardcoded baseline schemas + dynamic mathematical simulation engines) inside index.html. It does not require an external API subscription or live internet connection to run smoothly in the visionOS Simulator.
+* All Level 2 order book feeds, candlestick random-walk generators, 3D animations, and macro stress scenarios run entirely locally on-device. 
+* No external API keys or private network credentials are required for standalone execution.
+---
