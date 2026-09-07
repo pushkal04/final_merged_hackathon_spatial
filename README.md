@@ -1,6 +1,18 @@
 # VisionOS Spatial Trading Workstation & Analytics Suite
 
-An institutional-grade spatial computing trading suite built for Apple Vision Pro (visionOS). This application bridges historical floor-trading mechanics with cutting-edge spatial Level 2/3 analytics, cross-asset macro shockwave simulations, 3D volatility meshes, and AI copilot capabilities across floating 3D environments.
+An advanced professional trading workspace designed for the Apple Vision Pro headset. This app lets you manage and analyze financial markets using floating 3D windows and interactive holographic displays all around you in the room.
+
+Key Highlights in Plain Terms:
+
+Immersive 3D Trading Rooms: See your charts, order books, and data floating in mid-air so you never have to juggle multiple tabs on a flat screen.
+
+Old-School Trading Floor Vibe: Recreates the interactive energy of traditional stock exchange floors with virtual traders, hand signals, and spatial audio.
+
+Market Domino Effect Tools: Lets you simulate how major economic events (like a sudden interest rate hike) ripple across stocks, crypto, and commodities.
+
+3D Risk & Price Maps: Uses 3D models to visualize market risk and price unpredictability instead of flat 2D charts.
+
+Built-In AI Assistant: An intelligent co-pilot that helps you understand market imbalances and manage your portfolio risk.
 
 ---
 
