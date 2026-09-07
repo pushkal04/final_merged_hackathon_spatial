@@ -77,7 +77,24 @@ Built-in AI market assistant capable of analyzing order book imbalances, explain
 └── README.md                         # Documentation & setup guide
 
 
-ensure **"Copy items if needed"** and your app target are checked).
+```
+
+---
+
+## 🛠️ How to Run & Build
+
+### Prerequisites
+* **macOS**: Sonoma 14.0 or later
+* **Xcode**: Xcode 15.2 or later (with the **visionOS SDK** installed via *Xcode > Settings > Platforms*)
+
+---
+
+### Method A: Running in the visionOS Simulator
+
+1. **Open the Project in Xcode**:
+   * Open your `.xcodeproj` or create a new **visionOS > App** project in Xcode.
+   * Add `Spatial_WorkstationApp.swift`, `ContentView.swift`, and `WebViewContainer.swift` to your Xcode project target.
+   * Drag `index.html` into your Xcode project navigator (ensure **"Copy items if needed"** and your app target are checked).
 
 2. **Select the Simulator**:
    * In the top Xcode toolbar, select the target scheme: **Apple Vision Pro (Simulator)**.
